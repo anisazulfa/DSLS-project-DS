@@ -1,0 +1,74 @@
+# Path related
+dataset_path: data/raw/aggregate_median_irregularities_Kota Bekasi.csv
+dataset_cleaned_path: data/processed/raw_dataset.pkl
+train_set_path:
+- data/processed/x_train.pkl
+- data/processed/y_train.pkl
+test_set_path:
+- data/processed/x_test.pkl
+- data/processed/y_test.pkl
+train_feng_set_path:
+- data/processed/x_train_feng.pkl
+- data/processed/y_train_feng.pkl
+test_feng_set_path:
+- data/processed/x_test_feng.pkl
+- data/processed/y_test_feng.pkl
+standard_scaler: models/stdscaler.pkl
+best_parameters: models/best_parameters.pkl
+production_model_path: models/production_model.pkl
+training_log_path: log/training_log.json
+
+# Debug related
+print_debug: true
+
+# Predictors and label related
+label: median_seconds
+predictors:
+- jam_level
+- median_length
+- median_delay_seconds
+- median_regular_speed
+- total_records
+- median_speed
+
+# Columns by data type related
+datetime_columns:
+- time
+- date
+float_columns:
+- kemendagri_kabupaten_kode
+- median_length
+- median_delay_seconds
+- median_regular_speed
+- cause_type
+- median_seconds
+- median_speed
+- median_jam_level
+int_columns:
+- jam_level
+- total_records
+- id
+object_columns:
+- street
+- kemendagri_kabupaten_nama
+- geometry
+
+# Range of data related
+range_jam_level:
+- 1
+- 5
+range_median_length:
+- 1
+- 20000
+range_median_delay_seconds:
+- -1000
+- 5000
+range_median_regular_speed:
+- 1
+- 350
+range_total_records:
+- 1
+- 200
+range_median_speed:
+- 0
+- 60
